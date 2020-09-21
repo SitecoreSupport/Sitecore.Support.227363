@@ -98,7 +98,7 @@ namespace Sitecore.Support.ContentSearch.Azure.Http
       //catch (NotFoundException)
       catch (Exception e)
       {
-        if(!e.GetType().Equals("NotFoundException".CreateInternalAzureExceptionFromTypeName().GetType()))
+        if(!e.GetType().Equals("NotFoundException".CreateInternalAzureExceptionFromTypeName(e.Message, e).GetType()))
         {
           throw;
         }
